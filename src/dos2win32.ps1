@@ -1,0 +1,32 @@
+IF ($Args[0] -eq '-o') {
+	. '../MS-DOS Player/i386_x86/msdos.exe' -c$Args[1] $Args[2]
+}
+ELSEIF ($Args[0] -eq '-a') {
+	IF ($Args[1] -match 'i86|i286|i386|i486|ia32|pentium4|v30'){
+		$CPU = $Args[1]
+	}
+	ELSE {
+		Write-Host "Error: Wrong CPU type" -ForegroundColor red
+	}
+
+	IF ($Args[2] -eq '-o') {
+		. "../MS-DOS Player/${CPU}_x86/msdos.exe" -c$Args[3] $Args[4]
+	}
+	ELSE {
+		. "../MS-DOS Player/${CPU}_x86/msdos.exe" -c$Args[2] $Args[3]
+	}
+}
+ELSEIF ($Args[0] -ne '-o') {
+	. '../MS-DOS Player/i386_x86/msdos.exe' -c$Args[0] $Args[1]
+}
+ELSEIF ($Args[0] -eq '--help') {
+	'dos2win32 for Windows
+dos2win32 makes 32-bit Windows executables out of MS-DOS .com and .exe files.
+
+Usage:
+
+dos2win32 [-a CPU_TYPE] [-o] OUTPUT_FILE INPUT_FILE
+
+Valid CPU types are: i86 i286 i386 i486 ia32 pentium4 v30
+dos2win32 standards to CPU type i386.'
+}
