@@ -1,5 +1,5 @@
 @{
-    Root = 'c:\Users\wynto\Projects\PowerShell Stuff\dos2win\src\dos2win.ps1'
+    Root = 'c:\Users\wynto\Projects\PowerShell Stuff\dos2win\src\dos2win64\dos2win64.ps1'
     OutputPath = 'c:\Users\wynto\Projects\PowerShell Stuff\dos2win\build'
     Package = @{
         Enabled = $true

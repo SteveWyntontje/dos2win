@@ -7,6 +7,7 @@ ELSEIF ($Args[0] -eq '-a') {
 	}
 	ELSE {
 		Write-Host "Error: Wrong CPU type" -ForegroundColor red
+		exit 1
 	}
 
 	IF ($Args[2] -eq '-o') {
