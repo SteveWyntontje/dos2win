@@ -1,5 +1,5 @@
 IF ($Args[0] -eq '-o') {
-	. '../MS-DOS Player/i386_x64/msdos.exe' -c$Args[1] $Args[2]
+	& "C:\Program Files\MS-DOS\i386_x64\msdos.exe" -c$Args[1] $Args[2]
 }
 ELSEIF ($Args[0] -eq '-a') {
 	IF ($Args[1] -match 'i86|i286|i386|i486|ia32|pentium4|v30'){
@@ -7,17 +7,21 @@ ELSEIF ($Args[0] -eq '-a') {
 	}
 	ELSE {
 		Write-Host "Error: Wrong CPU type" -ForegroundColor red
+		exit 1
 	}
 
 	IF ($Args[2] -eq '-o') {
-		. "../MS-DOS Player/${CPU}_x64/msdos.exe" -c$Args[3] $Args[4]
+		& "C:\Program Files\MS-DOS\${CPU}_x64\msdos.exe" -c$Args[3] $Args[4]
+	}
+	ELSEIF (($Args[2] -eq '--') -and ($Args[3] -eq '--help')) {
+		& "C:\Program Files\MS-DOS\${CPU}_x64\msdos.exe"
 	}
 	ELSE {
-		. "../MS-DOS Player/${CPU}_x64/msdos.exe" -c$Args[2] $Args[3]
+		& "C:\Program Files\MS-DOS\${CPU}_x64\msdos.exe" -c$Args[2] $Args[3]
 	}
 }
-ELSEIF ($Args[0] -ne '-o') {
-	. '../MS-DOS Player/i386_x64/msdos.exe' -c$Args[0] $Args[1]
+ELSEIF (($Args[0] -eq '--') -and ($Args[1] -eq '--help')) {
+	& "C:\Program Files\MS-DOS\i386_x64\msdos.exe" --help
 }
 ELSEIF ($Args[0] -eq '--help') {
 	'dos2win64 for Windows
@@ -29,4 +33,7 @@ dos2win64 [-a CPU_TYPE] [-o] OUTPUT_FILE INPUT_FILE
 
 Valid CPU types are: i86 i286 i386 i486 ia32 pentium4 v30
 dos2win64 standards to CPU type i386.'
+}
+ELSE {
+	& "C:\Program Files\MS-DOS\i386_x64\msdos.exe" -c$Args[0] $Args[1]
 }
