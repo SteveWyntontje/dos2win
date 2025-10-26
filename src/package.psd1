@@ -15,6 +15,8 @@
         RequireElevation = $false
         ApplicationIconPath = ''
         PackageType = 'Console'
+        PowerShellCore = $true
+        Platform = 'x86'
     }
     Bundle = @{
         Enabled = $true
