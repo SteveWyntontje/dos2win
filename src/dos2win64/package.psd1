@@ -14,7 +14,6 @@
         Copyright = ''
         RequireElevation = $false
         ApplicationIconPath = ''
-        ProcessorArchitecture = 'Amd64'
         PackageType = 'Console'
     }
     Bundle = @{
