@@ -1,6 +1,7 @@
 @{
     Root = 'c:\Users\wynto\Projects\PowerShell Stuff\dos2win\src\dos2win64\dos2win64.ps1'
     OutputPath = 'c:\Users\wynto\Projects\PowerShell Stuff\dos2win\build'
+    GUID = '746d1797-e21d-43ec-9635-ff3279a801db'
     Package = @{
         Enabled = $true
         Obfuscate = $false
@@ -13,6 +14,7 @@
         Copyright = ''
         RequireElevation = $false
         ApplicationIconPath = ''
+        ProcessorArchitecture = 'Amd64'
         PackageType = 'Console'
     }
     Bundle = @{

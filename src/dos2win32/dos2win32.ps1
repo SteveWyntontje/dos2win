@@ -29,7 +29,7 @@ dos2win32 makes 32-bit Windows executables out of MS-DOS .com and .exe files.
 
 Usage:
 
-dos2win32 [-a CPU_TYPE] [[-o] OUTPUT_FILE INPUT_FILE] [-- --help]
+dos2win32 [-a CPU_TYPE] [[-o] OUTPUT_FILE INPUT_FILE] [-- [--help]]
 
 Valid CPU types are: i86 i286 i386 i486 ia32 pentium4 v30
 dos2win32 standards to CPU type i386.'
